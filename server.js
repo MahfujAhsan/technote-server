@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3500
 
 console.log(process.env.NODE_ENV)
 
-connectDB();
+connectDB()
 
 app.use(logger)
 
