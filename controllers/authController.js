@@ -29,14 +29,12 @@ const login = async (req, res) => {
                 "roles": foundUser.roles
             }
         },
-        process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: '15m' }
+        process.env.ACCESS_TOKEN_SECRET
     )
 
     const refreshToken = jwt.sign(
         { "username": foundUser.username },
-        process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: '7d' }
+        process.env.REFRESH_TOKEN_SECRET
     )
 
     // Create secure cookie with refresh token 
